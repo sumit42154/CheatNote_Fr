@@ -85,3 +85,34 @@ fetch("https://cheatnote.onrender.com/api/user/gettext", {
     console.error("Error fetching text:", error);
     window.location.href = "./index.html";
   });
+
+  document.addEventListener('keydown', (event) => {
+    // Example: Ctrl + S (or Cmd + S on Mac)
+    if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+       const originalHtml = saveBtn.innerHTML;
+  saveText.textContent = "Saving...";
+  fetch("https://cheatnote.onrender.com/api/user/addtext", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      startString: sessionStorage.getItem("startString") || "defaultSlug",
+      textString: editor.value,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
+      saveText.textContent = "Save";
+      // Optionally, you can show a success message or redirect the user
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Failed to save text. Please try again.");
+      saveText.textContent = "Save";
+
+      // Optionally, you can show an error message to the user
+    });
+    }
+});
