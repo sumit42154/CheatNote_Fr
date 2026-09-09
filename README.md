@@ -1,0 +1,1 @@
+https://cheatnote.vercel.app/
