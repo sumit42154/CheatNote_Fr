@@ -7,8 +7,14 @@ const copyToast = document.getElementById("copy-toast");
 const lockToggleBtn = document.getElementById("lock-toggle-btn");
 const saveBtn = document.getElementById("save-btn");
 const saveText = document.getElementById("save-text");
+const routeSpan = document.getElementById("routeSpan");
 
 let isLocked = false;
+
+const routeis = sessionStorage.getItem("startString") || "defaultSlug";
+routeSpan.textContent = `/${routeis}`;
+
+
 
 console.log("Hi");
 

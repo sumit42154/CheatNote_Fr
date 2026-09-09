@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link rel="stylesheet" href="./src/output.css" />
   <title>Cheat Note | Text Page</title>
   <!-- Google Fonts: Inter & JetBrains Mono -->
   <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -81,7 +82,7 @@
 </head>
 
 <body
-  class="bg-midnight text-slate-200 font-sans min-h-screen antialiased flex flex-col justify-between selection:bg-accent selection:text-white p-3 md:p-6 lg:p-8">
+  class="bg-midnight text-slate-200 font-sans min-h-screen antialiased flex flex-col justify-between selection:bg-accent selection:text-white p-3 sm:p-3 md:p-3 lg:p-8">
   <!-- BEGIN: TopHeader -->
   <header class="w-full max-w-[1720px] mx-auto mb-4 flex items-center justify-between">
     <div class="flex items-center space-x-3">
@@ -99,12 +100,11 @@
       </a>
     </div>
     <!-- Feedback / Suggestions Channel -->
-    <div class="flex items-center gap-3">
-      <a class="text-xs md:text-sm text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1.5 py-1 px-3 rounded-lg border border-transparent hover:border-slate-800 hover:bg-surface/50"
-        href="mailto:nologin044@gmail.com">
-        <span class="text-slate-500">Bugs/suggestions →</span>
-        <span
-          class="text-indigo-400 font-mono underline decoration-indigo-500/30 underline-offset-4">sumit7388842154@gmail.com</span>
+    <div class="flex items-center gap-3 hidden sm:block">
+      <a
+        class="text-xs md:text-sm text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1.5 py-1 px-3 rounded-lg border border-transparent hover:border-slate-800 hover:bg-surface/50">
+        <span id="routeSpan"
+          class="text-indigo-400 font-mono underline decoration-indigo-500/30 underline-offset-4">sumit</span>
       </a>
     </div>
   </header>
@@ -119,7 +119,7 @@
         <!-- Tab Bar and Top Actions -->
         <div class="flex items-center justify-between border-b border-slate-800/80 bg-surface px-3 pt-2.5">
           <!-- Left: Tab Switcher -->
-          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
+          <div class="flex items-center justify-between gap-1.5 overflow-x-auto pb-2 scrollbar-none">
             <!-- Active Tab 1 -->
             <button
               class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface-secondary border border-indigo-500/40 text-slate-100 font-medium text-xs md:text-sm shadow-sm">
@@ -127,32 +127,37 @@
                 <path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
               </svg>
               <span>Write Here</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 ml-0.5"></span>
+              <div class="absolute top-4 right-4 z-10 flex items-center gap-2">
+                <span
+                  class="opacity-0 transition-opacity duration-200 text-xs bg-indigo-600/90 backdrop-blur text-white px-2.5 py-1 rounded-md font-medium shadow-md"
+                  id="copy-toast">
+                  Copied!
+                </span>
+                <button
+                  class="p-2.5 rounded-xl bg-surface-secondary/90 hover:bg-indigo-600/80 border border-indigo-500/30 hover:border-indigo-400 text-indigo-300 hover:text-white transition-all shadow-md active:scale-95 group"
+                  id="quick-copy-btn" title="Copy entire text to clipboard">
+                  <svg class="w-5 h-5 transition-transform group-hover:scale-105" fill="none" stroke="currentColor"
+                    viewbox="0 0 24 24">
+                    <path
+                      d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                      stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Quick Floating Copy Action -->
+               
+              
             </button>
+            
           </div>
           <!-- Right: Mode Switches (Files Tab) -->
+           
 
         </div>
         <!-- Editor Body & Float Actions -->
         <div class="relative flex-1 min-h-[460px] lg:min-h-[530px] p-4 md:p-6 flex flex-col bg-midnight/50">
-          <!-- Quick Floating Copy Action -->
-          <div class="absolute top-4 right-4 z-10 flex items-center gap-2">
-            <span
-              class="opacity-0 transition-opacity duration-200 text-xs bg-indigo-600/90 backdrop-blur text-white px-2.5 py-1 rounded-md font-medium shadow-md"
-              id="copy-toast">
-              Copied!
-            </span>
-            <button
-              class="p-2.5 rounded-xl bg-surface-secondary/90 hover:bg-indigo-600/80 border border-indigo-500/30 hover:border-indigo-400 text-indigo-300 hover:text-white transition-all shadow-md active:scale-95 group"
-              id="quick-copy-btn" title="Copy entire text to clipboard">
-              <svg class="w-5 h-5 transition-transform group-hover:scale-105" fill="none" stroke="currentColor"
-                viewbox="0 0 24 24">
-                <path
-                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
-                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-              </svg>
-            </button>
-          </div>
+
           <!-- Main Input Textarea -->
           <textarea
             class="w-full h-full flex-1 bg-transparent border-none outline-none resize-none text-slate-200 placeholder-slate-600 font-mono text-sm md:text-base leading-relaxed focus:ring-0 focus:outline-none scrollbar-none"
@@ -165,9 +170,13 @@
               <span>Characters: <span class="text-slate-300" id="char-count">0</span></span>
             </div>
 
+            
+
           </div>
+          
         </div>
         <!-- Banner Helper / Advisory Strip -->
+         
 
       </div>
       <!-- END: Editor Card Outer Shell -->
@@ -190,7 +199,7 @@
         <span id="save-text">Save</span>
       </button>
       <!-- Top Card: Device Sync & QR Transfer -->
-      <div 
+      <div
         class="flex flex-col rounded-2xl bg-surface border border-indigo-950/80 p-5 shadow-lg relative overflow-hidden group hover:border-indigo-900/60 transition-all hidden sm:block">
         <div class="flex items-center justify-between mb-3 ">
           <span class="text-[11px] font-mono tracking-wider font-semibold uppercase text-indigo-400/90">Instant
