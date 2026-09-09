@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Cheat Note | Text Page</title>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link rel="icon" type="image/png" href="./1486506276-message-chat-comment-inbox-conversation-chatting-bubble_81480.png" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#0b0e17',
+            surface: {
+              DEFAULT: '#111524',
+              secondary: '#161b2e',
+              muted: '#1f253d',
+            },
+            accent: {
+              DEFAULT: '#6366f1',
+              hover: '#4f46e5',
+              glow: '#818cf8',
+              violet: '#8b5cf6'
+            },
+            borderNeon: '#2c3352'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'neon-subtle': '0 0 15px -3px rgba(99, 102, 241, 0.25)',
+            'neon-hover': '0 0 22px -1px rgba(99, 102, 241, 0.45)',
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Custom Scoped Styles -->
+  <style data-purpose="custom-scrollbars-and-glow">
+    /* Subtle theme scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0b0e17;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #252d47;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6366f1;
+    }
+
+    /* Glow accents */
+    .glow-border {
+      border: 1px solid rgba(99, 102, 241, 0.28);
+    }
+
+    .glow-border:hover {
+      border-color: rgba(129, 140, 248, 0.6);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-midnight text-slate-200 font-sans min-h-screen antialiased flex flex-col justify-between selection:bg-accent selection:text-white px-3 md:p-6 lg:p-8">
+  <!-- BEGIN: TopHeader -->
+  <header class="w-full max-w-[1720px] mx-auto mb-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <!-- Home Action Button -->
+      <a class="flex items-center gap-2.5 px-5 py-2.5 rounded-xl bg-surface border border-indigo-500/40 text-slate-100 font-medium text-sm hover:border-accent hover:bg-surface-secondary shadow-neon-subtle hover:shadow-neon-hover transition-all duration-200 group"
+        data-purpose="home-button" href="./index.html">
+        <svg
+          class="w-4 h-4 text-indigo-400 group-hover:text-indigo-300 transition-transform group-hover:-translate-y-0.5"
+          fill="none" stroke="currentColor" viewbox="0 0 24 24">
+          <path
+            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+        </svg>
+        <span>Home</span>
+      </a>
+    </div>
+    <!-- Feedback / Suggestions Channel -->
+    <div class="flex items-center gap-3">
+      <a class="text-xs md:text-sm text-slate-400 hover:text-indigo-300 transition-colors flex items-center gap-1.5 py-1 px-3 rounded-lg border border-transparent hover:border-slate-800 hover:bg-surface/50"
+        href="mailto:nologin044@gmail.com">
+        <span class="text-slate-500">Bugs/suggestions →</span>
+        <span
+          class="text-indigo-400 font-mono underline decoration-indigo-500/30 underline-offset-4">sumit7388842154@gmail.com</span>
+      </a>
+    </div>
+  </header>
+  <!-- END: TopHeader -->
+  <!-- BEGIN: ApplicationLayout -->
+  <main class="w-full max-w-[1720px] mx-auto flex-1 grid grid-cols-1 xl:grid-cols-12 gap-5">
+    <!-- BEGIN: MainEditorContainer (Left 9 cols on desktop) -->
+    <section class="xl:col-span-9 flex flex-col gap-4">
+      <!-- Editor Card Outer Shell -->
+      <div
+        class="bg-surface rounded-2xl border border-indigo-950/80 shadow-2xl flex flex-col flex-1 overflow-hidden transition-all duration-300 hover:border-indigo-900/60">
+        <!-- Tab Bar and Top Actions -->
+        <div class="flex items-center justify-between border-b border-slate-800/80 bg-surface px-3 pt-2.5">
+          <!-- Left: Tab Switcher -->
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-2 scrollbar-none">
+            <!-- Active Tab 1 -->
+            <button
+              class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-surface-secondary border border-indigo-500/40 text-slate-100 font-medium text-xs md:text-sm shadow-sm">
+              <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+              <span>Write Here</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 ml-0.5"></span>
+            </button>
+          </div>
+          <!-- Right: Mode Switches (Files Tab) -->
+
+        </div>
+        <!-- Editor Body & Float Actions -->
+        <div class="relative flex-1 min-h-[460px] lg:min-h-[530px] p-4 md:p-6 flex flex-col bg-midnight/50">
+          <!-- Quick Floating Copy Action -->
+          <div class="absolute top-4 right-4 z-10 flex items-center gap-2">
+            <span
+              class="opacity-0 transition-opacity duration-200 text-xs bg-indigo-600/90 backdrop-blur text-white px-2.5 py-1 rounded-md font-medium shadow-md"
+              id="copy-toast">
+              Copied!
+            </span>
+            <button
+              class="p-2.5 rounded-xl bg-surface-secondary/90 hover:bg-indigo-600/80 border border-indigo-500/30 hover:border-indigo-400 text-indigo-300 hover:text-white transition-all shadow-md active:scale-95 group"
+              id="quick-copy-btn" title="Copy entire text to clipboard">
+              <svg class="w-5 h-5 transition-transform group-hover:scale-105" fill="none" stroke="currentColor"
+                viewbox="0 0 24 24">
+                <path
+                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"
+                  stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+              </svg>
+            </button>
+          </div>
+          <!-- Main Input Textarea -->
+          <textarea
+            class="w-full h-full flex-1 bg-transparent border-none outline-none resize-none text-slate-200 placeholder-slate-600 font-mono text-sm md:text-base leading-relaxed focus:ring-0 focus:outline-none scrollbar-none"
+            data-purpose="user-clipboard-input" id="clipboard-editor" placeholder="Enter text and hit save button"
+            spellcheck="false"></textarea>
+          <!-- Character & Word Counter bar inside bottom -->
+          <div
+            class="flex items-center justify-between pt-3 border-t border-slate-900/80 text-xs text-slate-500 font-mono">
+            <div class="flex items-center gap-4">
+              <span>Characters: <span class="text-slate-300" id="char-count">0</span></span>
+            </div>
+
+          </div>
+        </div>
+        <!-- Banner Helper / Advisory Strip -->
+
+      </div>
+      <!-- END: Editor Card Outer Shell -->
+      <!-- BEGIN: BottomActionToolbar -->
+      <nav class="grid grid-cols-2 md:grid-cols-4 gap-3" data-purpose="actions-toolbar">
+        <!-- Primary Action: Save Button -->
+       
+      </nav>
+      <!-- END: BottomActionToolbar -->
+    </section>
+    <!-- BEGIN: RightSidebar (3 cols on desktop) -->
+    <aside class="xl:col-span-3 flex flex-col gap-4">
+      <button
+       class="flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm transition shadow-neon-subtle hover:shadow-neon-hover active:scale-[0.98]"
+       id="save-btn">
+       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+         <path d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"
+           stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+       </svg>
+       <span id="save-text">Save</span>
+     </button>
+      <!-- Top Card: Device Sync & QR Transfer -->
+      <div
+        class="flex flex-col rounded-2xl bg-surface border border-indigo-950/80 p-5 shadow-lg relative overflow-hidden group hover:border-indigo-900/60 transition-all">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[11px] font-mono tracking-wider font-semibold uppercase text-indigo-400/90">Instant
+            Transfer</span>
+          <span
+            class="text-[10px] bg-indigo-950 text-indigo-300 font-mono px-2 py-0.5 rounded-full border border-indigo-800/60">QR
+            Sync</span>
+        </div>
+        <h3 class="text-sm font-semibold text-slate-100 mb-1">Scan with phone to paste</h3>
+        <p class="text-xs text-slate-400 mb-4">Transfer your clipboard instantly across devices without login.</p>
+        <!-- Simulated Interactive QR Code container -->
+        <div
+          class="bg-surface-secondary border border-indigo-500/20 rounded-xl p-4 flex flex-col items-center justify-center gap-3">
+          <div class="p-3 bg-white rounded-lg shadow-inner flex items-center justify-center">
+            <!-- Lightweight SVG QR Vector -->
+            <svg class="w-32 h-32 text-slate-900" fill="currentColor" viewbox="0 0 24 24">
+              <path
+                d="M2 2h8v8H2V2zm2 2v4h4V4H4zm10-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm14 0h4v2h-4v-2zm-4-2h2v4h-2v-4zm2 4h2v4h-2v-4zm2-2h4v4h-4v-4zm-4 4h2v2h-2v-2zM5 5h2v2H5V5zm12 0h2v2h-2V5zM5 17h2v2H5v-2z">
+              </path>
+            </svg>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-mono text-indigo-300">
+            <svg class="w-3.5 h-3.5 animate-pulse text-indigo-400" fill="currentColor" viewbox="0 0 20 20">
+              <circle cx="10" cy="10" r="8"></circle>
+            </svg>
+            <span>Ready for pairing</span>
+          </div>
+        </div>
+      </div>
+      
+     
+    </aside>
+
+  </main>
+ 
+  <script src="./textpage.js"></script>
+
+
+</body>
+
+</html>

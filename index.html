@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cheat Note</title>
+    <!-- Tailwind CSS CDN with forms and container queries plugins -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style data-purpose="custom-glow-effects">
+        /* Subtle neon border and glow accents matching the interface */
+        .pill-border {
+            border: 1px solid rgba(99, 102, 241, 0.45);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.15);
+        }
+
+        .input-box-glow {
+            border: 1px solid rgba(99, 102, 241, 0.5);
+            box-shadow: 0 0 16px -2px rgba(99, 102, 241, 0.25);
+        }
+
+        .input-box-glow:focus-within {
+            border-color: rgba(129, 140, 248, 0.85);
+            box-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+        }
+
+        .btn-glow {
+            box-shadow: 0 0 18px rgba(79, 70, 229, 0.35);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 24px rgba(99, 102, 241, 0.6);
+            transform: translateY(-1px);
+        }
+    </style>
+    <link rel="icon" type="image/png" href="./1486506276-message-chat-comment-inbox-conversation-chatting-bubble_81480.png" />
+</head>
+
+<body
+    class="bg-black text-white min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-600 selection:text-white">
+    <!-- BEGIN: NavigationHeader -->
+    <header class="w-full px-6 sm:px-12 py-5 flex items-center justify-between border-b border-white/[0.03]">
+        <!-- Brand Logo -->
+        <a class="flex items-center space-x-2 group" href="#">
+            <!-- Stylized 'N' circle emblem -->
+            <div
+                class="w-7 h-7 rounded-full border border-indigo-400/80 flex items-center justify-center p-0.5 bg-indigo-950/40 shadow-[0_0_8px_rgba(129,140,248,0.5)]">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fafafa"><path d="M620-520q25 0 42.5-17.5T680-580q0-25-17.5-42.5T620-640q-25 0-42.5 17.5T560-580q0 25 17.5 42.5T620-520Zm-280 0q25 0 42.5-17.5T400-580q0-25-17.5-42.5T340-640q-25 0-42.5 17.5T280-580q0 25 17.5 42.5T340-520Zm263.5 221.5Q659-337 684-400H276q25 63 80.5 101.5T480-260q68 0 123.5-38.5ZM324-111.5Q251-143 197-197t-85.5-127Q80-397 80-480t31.5-156Q143-709 197-763t127-85.5Q397-880 480-880t156 31.5Q709-817 763-763t85.5 127Q880-563 880-480t-31.5 156Q817-251 763-197t-127 85.5Q563-80 480-80t-156-31.5ZM480-480Zm227 227q93-93 93-227t-93-227q-93-93-227-93t-227 93q-93 93-93 227t93 227q93 93 227 93t227-93Z"/></svg>
+            </div>
+            <!-- Logo Text with Underline Accent -->
+            <span class="text-xl font-bold tracking-tight text-white inline-block">
+                <span class="underline decoration-indigo-400 underline-offset-4 decoration-2">CHEAT NOTE</span>
+            </span>
+        </a>
+
+    </header>
+    <!-- BEGIN: HeroSection -->
+    <main class="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 -mt-10 md:-mt-14">
+        <div class="max-w-2xl w-full text-center flex flex-col items-center">
+            <!-- Top Tagline Pill Badge -->
+            <div
+                class="mb-7 inline-flex items-center px-4 py-1 rounded-full text-xs font-medium tracking-wide text-indigo-300/90 bg-[#090b16] pill-border cursor-default">
+                Type a route. get a page.
+            </div>
+            <!-- Main Headline -->
+            <h1
+                class="text-4xl sm:text-5xl md:text-[54px] font-extrabold text-white tracking-tight leading-[1.15] mb-4">
+                The fastest way to share
+            </h1>
+            <!-- Descriptive Subtitle -->
+            <div class="text-gray-400 text-base sm:text-[17px] font-normal leading-relaxed space-y-0.5 mb-10 max-w-lg">
+                <p>Share text, code and files online instantly</p>
+                <p>Upload once and access from any device.</p>
+            </div>
+            <!-- Input Form Component -->
+            <form class="w-full max-w-md flex flex-col items-center space-y-4" onsubmit="event.preventDefault();" id="stingForm">
+                <!-- Dual segmented input box -->
+                <div class="w-full flex rounded-lg overflow-hidden input-box-glow bg-[#23252a] transition duration-200">
+                    <!-- Static Prefix Badge -->
+                    <span
+                        class="inline-flex items-center px-4 py-2.5 text-indigo-400 font-medium text-sm sm:text-base border-r border-[#33363f] select-none bg-[#090a12]/70">
+                        cheatnote.com/
+                    </span>
+                    <!-- Dynamic Slug Input Field -->
+                    <input aria-label="Custom page path" id="slugInput"
+                        class="flex-1 bg-[#23252a] text-gray-200 text-sm sm:text-base px-3.5 py-2.5 border-0 focus:ring-0 focus:outline-none placeholder-gray-500 font-medium tracking-wide"
+                        placeholder="Enter a custom page name" type="text" value="" required="">
+                </div>
+                <!-- Submit CTA Button -->
+                <button id="submitBtn"
+                    class="w-44 py-2 px-6 rounded-lg bg-[#202048] border border-indigo-500/40 text-white text-sm font-semibold btn-glow hover:bg-[#28275c] active:scale-[0.98] transition duration-150 ease-out"
+                    type="submit">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </main>
+    <!-- END: HeroSection -->
+    <script src="index.js"></script>
+</body>
+
+</html>
